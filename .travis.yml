@@ -16,7 +16,7 @@ before_script:
 script:
   - docker --version
   - docker build -t simple-node .
-  - docket tag simple-node xthian82/simple-node:$TRAVIS_JOB_ID
+  - docker tag simple-node xthian82/simple-node:$TRAVIS_JOB_ID
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
